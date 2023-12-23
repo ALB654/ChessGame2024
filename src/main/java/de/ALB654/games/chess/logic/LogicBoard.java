@@ -49,6 +49,7 @@ public class LogicBoard {
 
     public void addFigure(LogicFigure figure, BoardPosition boardPosition) {
         board[boardPosition.x][boardPosition.y] = figure;
+        figure.setLogicBoard(this);
     }
 
     public LogicFigure getFigureOnPos(BoardPosition boardPosition) {
