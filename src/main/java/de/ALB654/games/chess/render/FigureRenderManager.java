@@ -44,6 +44,14 @@ public class FigureRenderManager {
         return null;
     }
 
+    public FigurRenO getFigureRenOPerLogicId(int logicId) {
+        for(FigurRenO figurRenO : figureRenOs) {
+            if(figurRenO.getLogicFigureId() == logicId)
+                return figurRenO;
+        }
+        return null;
+    }
+
     public ArrayList<FigurRenO> getFigureRenOs() {
         return figureRenOs;
     }

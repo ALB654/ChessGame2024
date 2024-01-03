@@ -2,6 +2,8 @@ package de.ALB654.games.chess.render;
 
 
 
+import de.ALB654.games.chess.input.MouseInputManager;
+
 import javax.swing.*;
 import java.awt.*;
 import java.util.ArrayList;
@@ -17,6 +19,13 @@ public class GamePanel extends JPanel {
         setSize(dim);
         setPreferredSize(dim);
         setMinimumSize(dim);
+
+
+    }
+
+    public GamePanel(MouseInputManager mouseInputManager) {
+        addMouseListener(mouseInputManager);
+        mouseInputManager.setGamePanel(this);
     }
 
     public void addRenderObject(RenderObject renO) {
@@ -31,6 +40,11 @@ public class GamePanel extends JPanel {
                 return renderObject;
         }
         return null;
+    }
+
+    @Override
+    public void repaint() {
+        super.repaint();
     }
 
     @Override

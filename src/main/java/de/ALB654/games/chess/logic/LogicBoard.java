@@ -1,5 +1,7 @@
 package de.ALB654.games.chess.logic;
 
+import de.ALB654.games.chess.utils.Vector2i;
+
 public class LogicBoard {
 
     private final LogicFigure[][] board;
@@ -16,14 +18,26 @@ public class LogicBoard {
         board = new LogicFigure[xSize][ySize];
     }
 
+    public BoardPosition createBoardPosition(Vector2i pos) {
+        return createBoardPosition(pos.getX(), pos.getY(), BoardPosition.RenderMode.NORMAL_MOVE);
+    }
+
+    public BoardPosition createBoardPosition(Vector2i pos, BoardPosition.RenderMode renderMode) {
+        return createBoardPosition(pos.getX(), pos.getY(), renderMode);
+    }
+
     public BoardPosition createBoardPosition(int x, int y) {
+        return createBoardPosition(x, y, BoardPosition.RenderMode.NORMAL_MOVE);
+    }
+
+    public BoardPosition createBoardPosition(int x, int y, BoardPosition.RenderMode renderMode) {
         if(x >= 0 && y >= 0 && x < xSize && y < ySize)
-            return new BoardPosition(x, y);
+            return new BoardPosition(x, y, renderMode);
 
         System.err.println("[createBP] Ungültige Position angefragt: x: " + x + " y: " + y + "\n"
                             + "Größe: x: " + xSize + " y: " + ySize);
 
-        return new BoardPosition(0, 0);
+        return new BoardPosition(0, 0, renderMode);
     }
 
     public boolean moveFigure(BoardPosition startPosition, BoardPosition targetPosition) {
@@ -34,12 +48,14 @@ public class LogicBoard {
             return false;
         }
 
+        /* Check removed -> Unnötiger doppelcheck, Fehler beim schlagen: BoardPosition RenderMode ist beim Check unterschiedlich
+
         if(!figure.getPossibleMoves(startPosition.x, startPosition.y).contains(createBoardPosition(targetPosition.x, targetPosition.y))) {
             System.err.println("Es wurde versucht eine Figur zu bewegen, aber die Figur kann sich nicht auf das angegebene Feld bewegen!\n" +
                     "Angegebenes Feld: X: " + startPosition.x + " Y: " + startPosition.y + "\n" +
                     "Zielfeld: X: " + targetPosition.x + " Y: " + targetPosition.y);
             return false;
-        }
+        }*/
 
         board[startPosition.x][startPosition.y] = null;
         board[targetPosition.x][targetPosition.y] = figure;
@@ -73,5 +89,16 @@ public class LogicBoard {
         return ySize;
     }
 
-    public record BoardPosition(int x, int y) { }
+    public record BoardPosition(int x, int y, RenderMode renderMode) {
+
+        public enum RenderMode {
+            OWN_POS,
+            NORMAL_MOVE,
+            HIT
+        }
+
+        public boolean isOnlyPosEqual(BoardPosition other) {
+            return x == other.x() && y == other.y();
+        }
+    }
 }

@@ -2,11 +2,12 @@ package de.ALB654.games.chess.render.renderObjects;
 
 import de.ALB654.games.chess.FigureType;
 import de.ALB654.games.chess.render.RenderObject;
+import de.ALB654.games.chess.render.animation.Moveable;
 import de.ALB654.games.chess.render.sprite.Sprite;
 
 import java.awt.*;
 
-public class FigurRenO extends RenderObject {
+public class FigurRenO extends RenderObject implements Moveable {
 
     private Sprite sprite;
     private boolean isBlack;
@@ -24,7 +25,9 @@ public class FigurRenO extends RenderObject {
 
     @Override
     public void draw(Graphics2D g2d) {
+        g2d.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
         g2d.drawImage(sprite.getImage(), getxPos(), getyPos(), null);
+        g2d.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_OFF);
     }
 
     @Override
@@ -42,5 +45,11 @@ public class FigurRenO extends RenderObject {
 
     public int getLogicFigureId() {
         return logicFigureId;
+    }
+
+    @Override
+    public void moveToPosition(int x, int y) {
+        setxPos(x);
+        setyPos(y);
     }
 }

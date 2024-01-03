@@ -14,22 +14,24 @@ public class TurmMoveSet implements MoveSet {
 
         ArrayList<LogicBoard.BoardPosition> positions = new ArrayList<>();
 
-        for(int x = xPos; x > 0; x--) {
+        positions.add(logicBoard.createBoardPosition(xPos, yPos, LogicBoard.BoardPosition.RenderMode.OWN_POS));
+
+        for(int x = xPos - 1; x >= 0; x--) {
             if(rayCheck(x, yPos, positions, isBlack, logicBoard))
                 break;
         }
 
-        for(int x = xPos; x < logicBoard.getXSize(); x++) {
+        for(int x = xPos + 1; x < logicBoard.getXSize(); x++) {
             if(rayCheck(x, yPos, positions, isBlack, logicBoard))
                 break;
         }
 
-        for(int y = yPos; y > 0; y--) {
+        for(int y = yPos - 1; y >= 0; y--) {
             if(rayCheck(xPos, y, positions, isBlack, logicBoard))
                 break;
         }
 
-        for(int y = yPos; y < logicBoard.getYSize(); y++) {
+        for(int y = yPos + 1; y < logicBoard.getYSize(); y++) {
             if(rayCheck(xPos, y, positions, isBlack, logicBoard))
                 break;
         }
@@ -41,12 +43,13 @@ public class TurmMoveSet implements MoveSet {
         LogicFigure figOnPos = logicBoard.getFigureOnPos(x, y);
         if(figOnPos != null) {
             if(isBlack != figOnPos.isBlack())
-                positions.add(logicBoard.createBoardPosition(x, y));
+                positions.add(logicBoard.createBoardPosition(x, y, LogicBoard.BoardPosition.RenderMode.HIT));
 
             return true;
         } else {
             positions.add(logicBoard.createBoardPosition(x, y));
         }
+
         return false;
     }
 }
