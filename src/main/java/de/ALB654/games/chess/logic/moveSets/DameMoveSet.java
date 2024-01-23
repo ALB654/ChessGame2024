@@ -9,6 +9,10 @@ import java.util.ArrayList;
 
 public class DameMoveSet implements MoveSet {
 
+    @Override
+    public ArrayList<LogicBoard.BoardPosition> getPossibleHitMoves(int xPos, int yPos, boolean isBlack, LogicBoard logicBoard) {
+        return getPossibleMoves(xPos, yPos, isBlack, logicBoard);
+    }
 
     @Override
     public ArrayList<LogicBoard.BoardPosition> getPossibleMoves(int xPos, int yPos, boolean isBlack, LogicBoard logicBoard) {
@@ -65,6 +69,8 @@ public class DameMoveSet implements MoveSet {
         if(figOnPos != null) {
             if(isBlack != figOnPos.isBlack())
                 positions.add(logicBoard.createBoardPosition(x, y, LogicBoard.BoardPosition.RenderMode.HIT));
+            else
+                positions.add(logicBoard.createBoardPosition(x, y, LogicBoard.BoardPosition.RenderMode.FRIENDLY_HIT));
 
             return true;
         } else {

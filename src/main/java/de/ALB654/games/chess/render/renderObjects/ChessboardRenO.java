@@ -123,6 +123,9 @@ public class ChessboardRenO extends RenderObject {
                                     g2d.setColor(new Color(239, 23, 23, 124));
                                     g2d.fillRect(tilePos.x, tilePos.y, getXTileSize() + 1, getYTileSize() + 1);
                                 }
+                                case FRIENDLY_HIT -> {
+
+                                }
                             }
                     }
                 }

@@ -5,30 +5,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c458d42e-38bf-48a1-bcd3-018fceabdf01" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/de/ALB654/games/chess/input/MouseInputManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/de/ALB654/games/chess/logic/moveSets/BauerMoveSet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/de/ALB654/games/chess/logic/moveSets/DameMoveSet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/de/ALB654/games/chess/logic/moveSets/KoenigMoveSet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/de/ALB654/games/chess/logic/moveSets/LaeuferMoveSet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/de/ALB654/games/chess/logic/moveSets/SpringerMoveSet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/de/ALB654/games/chess/render/animation/Animation.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/de/ALB654/games/chess/render/animation/AnimationManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/de/ALB654/games/chess/render/animation/AnimationTime.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/de/ALB654/games/chess/render/animation/Moveable.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/de/ALB654/games/chess/render/animation/animation/LinearAnimation.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/de/ALB654/games/chess/render/animation/animationTimes/EaseInOutAnimationTime.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/de/ALB654/games/chess/render/animation/animationTimes/LinearAnimationTime.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/de/ALB654/games/chess/utils/Vector2i.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/de/ALB654/games/chess/Chess.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/ALB654/games/chess/Chess.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/ALB654/games/chess/input/MouseInputManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/ALB654/games/chess/input/MouseInputManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/de/ALB654/games/chess/logic/LogicBoard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/ALB654/games/chess/logic/LogicBoard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/ALB654/games/chess/logic/LogicFigure.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/ALB654/games/chess/logic/LogicFigure.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/ALB654/games/chess/logic/MoveSet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/ALB654/games/chess/logic/MoveSet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/ALB654/games/chess/logic/moveSets/BauerMoveSet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/ALB654/games/chess/logic/moveSets/BauerMoveSet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/ALB654/games/chess/logic/moveSets/DameMoveSet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/ALB654/games/chess/logic/moveSets/DameMoveSet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/ALB654/games/chess/logic/moveSets/KoenigMoveSet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/ALB654/games/chess/logic/moveSets/KoenigMoveSet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/ALB654/games/chess/logic/moveSets/LaeuferMoveSet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/ALB654/games/chess/logic/moveSets/LaeuferMoveSet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/ALB654/games/chess/logic/moveSets/SpringerMoveSet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/ALB654/games/chess/logic/moveSets/SpringerMoveSet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/de/ALB654/games/chess/logic/moveSets/TurmMoveSet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/ALB654/games/chess/logic/moveSets/TurmMoveSet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/ALB654/games/chess/render/FigureRenderManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/ALB654/games/chess/render/FigureRenderManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/ALB654/games/chess/render/GamePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/ALB654/games/chess/render/GamePanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/ALB654/games/chess/render/RenderObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/ALB654/games/chess/render/RenderObject.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/de/ALB654/games/chess/render/renderObjects/ChessboardRenO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/ALB654/games/chess/render/renderObjects/ChessboardRenO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/ALB654/games/chess/render/renderObjects/FigurRenO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/ALB654/games/chess/render/renderObjects/FigurRenO.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

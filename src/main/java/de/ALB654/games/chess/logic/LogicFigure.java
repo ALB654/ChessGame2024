@@ -29,6 +29,12 @@ public class LogicFigure {
         return null;
     }
 
+    public ArrayList<LogicBoard.BoardPosition> getPossibleHitMoves(int x, int y) {
+        if(logicBoard != null)
+            return moveSet.getPossibleHitMoves(x, y, isBlack, logicBoard);
+        return null;
+    }
+
     public boolean isBlack() {
         return isBlack;
     }

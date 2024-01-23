@@ -61,6 +61,7 @@ public class Chess {
         logicBoard.addFigure(new LogicFigure(15, FigureType.BAUER, false, new BauerMoveSet(true)), logicBoard.createBoardPosition(7, 6));
 
         logicBoard.addFigure(new LogicFigure(16, FigureType.KOENIG, false, new KoenigMoveSet()), logicBoard.createBoardPosition(4, 4));
+        logicBoard.addFigure(new LogicFigure(17, FigureType.TURM, true, new TurmMoveSet()), logicBoard.createBoardPosition(3, 4));
 
     }
 

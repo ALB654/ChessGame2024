@@ -94,7 +94,8 @@ public class LogicBoard {
         public enum RenderMode {
             OWN_POS,
             NORMAL_MOVE,
-            HIT
+            HIT,
+            FRIENDLY_HIT
         }
 
         public boolean isOnlyPosEqual(BoardPosition other) {

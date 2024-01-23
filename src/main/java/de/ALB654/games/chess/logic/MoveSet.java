@@ -6,4 +6,6 @@ public interface MoveSet {
 
     ArrayList<LogicBoard.BoardPosition> getPossibleMoves(int xPos, int yPos, boolean isBlack, LogicBoard logicBoard);
 
+    ArrayList<LogicBoard.BoardPosition> getPossibleHitMoves(int xPos, int yPos, boolean isBlack, LogicBoard logicBoard);
+
 }

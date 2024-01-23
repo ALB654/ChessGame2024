@@ -49,7 +49,7 @@ public class MouseInputManager extends MouseAdapter {
                 ArrayList<LogicBoard.BoardPosition> possibleMoves = activeFigure.possibleMoves();
 
                 for(LogicBoard.BoardPosition bp : possibleMoves) {
-                    if(bp.x() == xPos && bp.y() == yPos && !bp.renderMode().equals(LogicBoard.BoardPosition.RenderMode.OWN_POS)) {
+                    if(bp.x() == xPos && bp.y() == yPos && !bp.renderMode().equals(LogicBoard.BoardPosition.RenderMode.OWN_POS) && !bp.renderMode().equals(LogicBoard.BoardPosition.RenderMode.FRIENDLY_HIT)) {
 
                         LogicFigure hitLogicFigure = logicManager.getFigureOnPos(xPos, yPos);
                         if(hitLogicFigure != null) {

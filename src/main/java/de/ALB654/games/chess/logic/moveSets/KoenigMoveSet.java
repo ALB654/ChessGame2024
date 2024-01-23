@@ -8,6 +8,12 @@ import de.ALB654.games.chess.utils.Vector2i;
 import java.util.ArrayList;
 
 public class KoenigMoveSet implements MoveSet {
+
+    @Override
+    public ArrayList<LogicBoard.BoardPosition> getPossibleHitMoves(int xPos, int yPos, boolean isBlack, LogicBoard logicBoard) {
+        return getPossibleMoves(xPos, yPos, isBlack, logicBoard);
+    }
+
     @Override
     public ArrayList<LogicBoard.BoardPosition> getPossibleMoves(int xPos, int yPos, boolean isBlack, LogicBoard logicBoard) {
         ArrayList<LogicBoard.BoardPosition> positions = new ArrayList<>();
@@ -29,9 +35,9 @@ public class KoenigMoveSet implements MoveSet {
             for(int y = 0; y < logicBoard.getYSize(); y++) {
                 LogicFigure logicFigure = logicBoard.getFigureOnPos(x, y);
                 if(logicFigure != null && logicFigure.isBlack() != isBlack) {
-                    ArrayList<LogicBoard.BoardPosition> moves = logicFigure.getPossibleMoves(x, y);
+                    ArrayList<LogicBoard.BoardPosition> moves = logicFigure.getPossibleHitMoves(x, y);
                     moves.forEach(m -> {
-                        if(m.renderMode() == LogicBoard.BoardPosition.RenderMode.NORMAL_MOVE)
+                        if(m.renderMode() != LogicBoard.BoardPosition.RenderMode.OWN_POS)
                             movesFromOther.add(m);
                     });
                 }
@@ -48,6 +54,7 @@ public class KoenigMoveSet implements MoveSet {
         });
 
         positions.removeAll(notPossiblePositions);
+        positions.add(logicBoard.createBoardPosition(xPos, yPos, LogicBoard.BoardPosition.RenderMode.OWN_POS));
 
         return positions;
     }
@@ -61,6 +68,8 @@ public class KoenigMoveSet implements MoveSet {
         if(figOnPos != null) {
             if(isBlack != figOnPos.isBlack())
                 positions.add(logicBoard.createBoardPosition(pos, LogicBoard.BoardPosition.RenderMode.HIT));
+            else
+                positions.add(logicBoard.createBoardPosition(pos, LogicBoard.BoardPosition.RenderMode.FRIENDLY_HIT));
 
             return true;
         } else {
